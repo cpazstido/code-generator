@@ -14,26 +14,26 @@ public class Generator {
 		List<String> warnings = new ArrayList<String>();
 		boolean overwrite = true;
 		GeneratorConfig codeConfig = new GeneratorConfig("com.mysql.jdbc.Driver",
-				"jdbc:mysql://10.10.1.79:3306/test?useSSL=false", "root", "root");
+				"jdbc:mysql://10.10.1.79:3306/distributor?useSSL=false", "root", "root");
 
 		// 项目目录
-		codeConfig.setProjectDir("D:\\project\\idea\\test\\");
+		codeConfig.setProjectDir("D:\\project\\ds\\ds-app\\");
 		// 生成代码目录
 		codeConfig.setGeneratorDir("src/main/java");
 		// dao包名
-		codeConfig.setDaoPackageName("com.cf.sessiontest.dao");
+		codeConfig.setDaoPackageName("cn.sofmit.app.dao");
 		// 实体包名
-		codeConfig.setEntityPackageName("com.cf.sessiontest.model");
+		codeConfig.setEntityPackageName("cn.sofmit.app.model");
 		// mapper xml目录
 		codeConfig.setMapperXmlDir("src/main/resources/mapper");
 		// service 接口包名
-		codeConfig.setServiceInterfacePackageName("com.cf.sessiontest.service");
+		codeConfig.setServiceInterfacePackageName("cn.sofmit.app.service");
 		// service 实现类包名
-		codeConfig.setServiceImplPackageName("com.cf.sessiontest.service.impl");
+		codeConfig.setServiceImplPackageName("cn.sofmit.app.service.impl");
 
 		// 数据库表过滤
 		TableConfiguration table = new TableConfiguration(codeConfig.getContext());
-		table.setTableName("user"); // %代表通配符
+		table.setTableName("t_order_collect"); // %代表通配符
 		// 使用实际列名作为字段名
 		table.addProperty("useActualColumnNames", "true");
 		// 生成构造方法
